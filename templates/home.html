@@ -1,0 +1,201 @@
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  
+</head>
+   <body>
+      <title>Churn Prediction</title>
+	  <div class="full">
+	  <div class="heading-container"><h1 class="heading">Customer Churn Prediction</h1></div>
+	  <div class="image">
+		<img src="{{url_for('static', filename='images/cust_churn.jpeg')}}" alt="" srcset="">
+	  </div>
+	  <div class="container">
+		
+		<div class="row-attributes">
+
+		  <form action="http://localhost:5000/" method="POST">
+		  	<div class="col-sm-9">
+			 <div class="form-group  purple-border">
+				  <label for="comment">SeniorCitizen:</label>
+				  <select class="input_field" id="query1" name="query1" class="form-control form-control-sm">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query1" name="query1" rows="2" cols="5" autofocus>{{query1}}</textarea> -->
+			</div>
+		
+			<div class="form-group  purple-border">
+				  <label for="comment">gender:</label>
+				  <select class="input_field" id="query4" name="query4" class="form-control form-control-sm">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query4" name="query4" rows="2" cols="5" autofocus>{{query4}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">Partner:</label>
+				  <select class="input_field" id="query5" name="query5" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query5" name="query5" rows="2" cols="5" autofocus>{{query5}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">Dependents:</label>
+				  <select class="input_field" id="query6" name="query6" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query6" name="query6" rows="2" cols="5" autofocus>{{query6}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">PhoneService:</label>
+				  <select class="input_field" id="query7" name="query7" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query7" name="query7" rows="2" cols="5" autofocus>{{query7}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">MultipleLines:</label>
+				  <select class="input_field" id="query8" name="query8" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<optionn value="No phone service">No phone service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query8" name="query8" rows="2" cols="5" autofocus>{{query8}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">InternetService:</label>
+				  <select class="input_field" id="query9" name="query9" class="form-control form-control-sm">
+					<option value="DSL">DSL</option>
+					<option value="Fiber optic">Fiber optic</option>
+					<option value="No">No</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query9" name="query9" rows="2" cols="5" autofocus>{{query9}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">OnlineSecurity:</label>
+				  <select class="input_field" id="query10" name="query10" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query10" name="query10" rows="2" cols="5" autofocus>{{query10}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">OnlineBackup:</label>
+				  <select class="input_field" id="query11" name="query11" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query11" name="query11" rows="2" cols="5" autofocus>{{query11}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">DeviceProtection:</label>
+				  <select class="input_field" id="query12" name="query12" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query12" name="query12" rows="2" cols="5" autofocus>{{query12}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">TechSupport:</label>
+				  <select class="input_field" id="query13" name="query13" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query13" name="query13" rows="2" cols="5" autofocus>{{query13}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">StreamingTV:</label>
+				  <select class="input_field" id="query14" name="query14" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query14" name="query14" rows="2" cols="5" autofocus>{{query14}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">StreamingMovies:</label>
+				  <select class="input_field" id="query15" name="query15" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					<option value="No internet service">No internet service</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query15" name="query15" rows="2" cols="5" autofocus>{{query15}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">Contract:</label>
+				  <select class="input_field" id="query16" name="query16" class="form-control form-control-sm">
+					<option value="Month-to-month">Month-to-month</option>
+					<option value="One year">One year</option>
+					<option value="Two year">Two year</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query16" name="query16" rows="2" cols="5" autofocus>{{query16}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">PaperlessBilling:</label>
+				  <select class="input_field" id="query17" name="query17" class="form-control form-control-sm">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+					
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query17" name="query17" rows="2" cols="5" autofocus>{{query17}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">PaymentMethod:</label>
+				  <select class="input_field" id="query18" name="query18" class="form-control form-control-sm">
+					<option value="Electronic check">Electronic check</option>
+					<option value="Mailed check">Mailed check</option>
+					<option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+					<option value="Credit card (automatic)">Credit card (automatic)</option>
+				  </select>
+				  <!-- <textarea class="form-control" rows="2" id="query18" name="query18" rows="2" cols="5" autofocus>{{query18}}</textarea> -->
+			</div>
+			<div class="form-group  purple-border">
+				  <label for="comment">tenure:</label>
+				  <textarea class="form-control" rows="2" id="query19" name="query19" rows="2" cols="5" autofocus placeholder="Integer value in month"></textarea>
+			</div>
+			<div class="form-group  purple-border">
+				<label for="comment">MonthlyCharges:</label>
+				<textarea class="form-control" rows="2" id="query2" name="query2" rows="2" cols="5" autofocus placeholder="Monthly Charges :"></textarea>
+		  </div>
+		  <div class="form-group  purple-border">
+				<label for="comment">TotalCharges:</label>
+				<textarea class="form-control" rows="2" id="query3" name="query3" rows="2" cols="5" autofocus placeholder="Total Charges :"></textarea>
+		  </div>
+			</div>
+			<div class="col-sm-3">
+			<button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
+			</div>
+		  </form>
+		  </div>
+		  
+		<div class="row-answer"> 
+			<div class="col-sm-9">
+			<textarea class="form-control" rows="2" id="comment" name="query6" rows="2" cols="5" autofocus placeholder="Answer">{{output1}}</textarea>
+			<textarea class="form-control" rows="2" id="comment" name="query7" rows="2" cols="5" autofocus placeholder="answer">{{output2}}</textarea>
+			</div>
+		</div>
+	</div>	
+</div>
+
+   </body>
+  
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
